@@ -6,6 +6,7 @@ gem 'rails', '4.2.6'
 
 # List Gems alphabetical
 gem 'coffee-rails', '~> 4.1.0'
+gem 'devise'
 gem 'jbuilder', '~> 2.0'
 gem 'jquery-rails'
 gem 'pg', '~> 0.15'
