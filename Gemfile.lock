@@ -102,9 +102,8 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
-    mailgun-ruby (1.1.0)
-      json (~> 1.8)
-      rest-client (~> 1.6)
+    mailgun (0.8)
+      rest-client
     mime-types (2.99.1)
     mini_portile2 (2.0.0)
     minitest (5.8.4)
@@ -228,7 +227,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   launchy (~> 2.4.2)
-  mailgun-ruby
+  mailgun
   pg (~> 0.15)
   rails (= 4.2.6)
   rspec-rails (~> 3.1.0)

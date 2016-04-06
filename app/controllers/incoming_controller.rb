@@ -4,7 +4,7 @@ class IncomingController < ApplicationController
   def create
     @mentor = Mentor.find_by_email(params[:sender])
     if @mentor.present?
-      @skill = Skill.find_by_name(params[:subject]
+      @skill = Skill.find_by_name(params[:subject])
       if @skill == nil
         @skill          = Skill.new
         @skill.name     = params[:subject]
