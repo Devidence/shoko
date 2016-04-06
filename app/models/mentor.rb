@@ -3,4 +3,8 @@ class Mentor < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
+
+  has_many :skills
+  has_many :students
+  has_many :bookmarks
 end
