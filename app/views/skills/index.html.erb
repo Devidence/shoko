@@ -1,5 +1,15 @@
 <h1>Skills</h1>
 
+<%= form_for @new_skill do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  
+  <%= f.label :description %>
+  <%= f.text_area :description %>
+  
+  <%= f.submit "Add" %>
+<% end %>
+
 <% @skills.each do |skill| %>
   <p>
     <%= skill.name %>
