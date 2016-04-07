@@ -1,0 +1,16 @@
+<h1>Bookmarks</h1>
+<%= form_for @new_bookmark do |f| %>
+  <%= f.label :skill %>
+  <%= f.select :skill_id, Skill.all.collect{|p| [p.name, p.id]} %>
+
+  <%= f.label :url %>
+  <%= f.text_field :url %>
+
+  <%= f.submit "Add" %>
+<% end %>
+
+<% @bookmarks.each do |bookmark| %>
+  <p>
+    <%= bookmark.url %> [<%= bookmark.skill.name %>]
+  </p>
+<% end %>
