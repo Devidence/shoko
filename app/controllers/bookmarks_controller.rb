@@ -1,5 +1,5 @@
 class BookmarksController < ApplicationController
-  before_action :authenticate_mentor!
+  before_action :authenticate!
 
   def index
     @new_bookmark = Bookmark.new
