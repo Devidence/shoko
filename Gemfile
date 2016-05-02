@@ -16,6 +16,7 @@ gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
 gem 'figaro'
 gem 'mailgun'
+gem 'normalize-rails'
 
 group :development, :test do
   gem 'byebug'
