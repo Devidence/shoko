@@ -1,10 +1,7 @@
 <% if current_student %>
-  <%= current_student.first_name %>
   <%= link_to "Sign Out", destroy_student_session_path, method: :delete %>
 <% elsif current_mentor %>
-  <%= current_mentor.first_name %>
   <%= link_to "Sign Out", destroy_mentor_session_path, method: :delete %>
 <% else %>
-  <%= link_to "Mentors", new_mentor_session_path %>
-  <%= link_to "Students", new_student_session_path %>
+  <%= link_to "Sign In", new_student_session_path %>
 <% end %>
