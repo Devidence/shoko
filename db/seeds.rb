@@ -19,10 +19,25 @@ mentor.save!
   )
 end
 
+skill = Skill.new(
+  name: "beginner",
+  description: "Programming Basics",
+  mentor: mentor
+)
+skill.save!
+
+#Bookmarks
+100.times do
+  Bookmark.create!(
+    url: Faker::Internet.url,
+    skill: skill,
+    mentor: mentor
+  )
+end
 
 # Output
 # For output, just add class that you seeded to the models Array
-models = [Mentor, Skill]
+models = [Mentor, Skill, Bookmark]
 
 models.each do |model|
   puts "#{model.count} #{model.to_s.pluralize} were created."
