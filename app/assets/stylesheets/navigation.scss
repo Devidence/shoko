@@ -1,0 +1,45 @@
+body {
+  margin: 0px;
+  font-family: $main-font;
+}
+
+nav {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 0.5em;
+  padding-left: 2em;
+  padding-right: 2em;
+  height: 3em;
+  background-color: black;
+}
+
+.nav-general-links {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  margin: auto;
+}
+
+nav a {
+  font-size: 0.8em;
+  vertical-align: middle;
+  color: white;
+  text-decoration: none;
+  font-family: $main-font;
+}
+
+nav .nav-general-links a {
+  padding-left: 2em;
+}
+
+nav a.nav-logo {
+  font-size: 2.4em;
+  font-family: $logo-font;
+}
+
+.main-container {
+  padding-left: 0.75em;
+  padding-right: 0.75em;
+}
