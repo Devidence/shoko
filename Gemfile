@@ -16,7 +16,9 @@ gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
 gem 'figaro'
 gem 'mailgun'
+gem 'normalize-rails'
 gem 'bootstrap-sass'
+
 
 group :development, :test do
   gem 'byebug'
