@@ -27,7 +27,7 @@ skill = Skill.new(
 skill.save!
 
 #Bookmarks
-100.times do
+50.times do
   Bookmark.create!(
     url: Faker::Internet.url,
     skill: skill,
