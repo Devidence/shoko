@@ -19,18 +19,13 @@ mentor.save!
   )
 end
 
-skill = Skill.new(
-  name: "beginner",
-  description: "Programming Basics",
-  mentor: mentor
-)
-skill.save!
+skills = Skill.all
 
 #Bookmarks
 50.times do
   Bookmark.create!(
     url: Faker::Internet.url,
-    skill: skill,
+    skill: skills.sample,
     mentor: mentor
   )
 end
