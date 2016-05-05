@@ -1,0 +1,13 @@
+// Global Styling
+
+@font-face {
+  font-family: "CF Samurai Bob";
+  src: url('<%= asset_path("CFSamuraiBob.ttf") %>') format("truetype");
+}
+
+$logo-font: "CF Samurai Bob", sans-serif;
+$main-font: "Avenir Next", sans-serif;
+
+// Imports
+
+@import "navigation";
