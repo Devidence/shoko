@@ -1,6 +1,14 @@
   <nav>
-    <%= link_to "Skills", skills_path %>
-    <%= link_to "Bookmarks", bookmarks_path %>
-
-    <%= render "navigation/login" %>
+    <div class="nav-logo-container">
+      <%= link_to "SHOKO", root_path, class: "nav-logo" %>
+    </div>
+    
+    <div class="nav-general-links">
+      <%= link_to "Skills", skills_path %>
+      <%= link_to "Bookmarks", bookmarks_path %>
+    </div>
+    
+    <div class="nav-session-links">
+      <%= render "navigation/login" %>
+    </div>
   </nav>
