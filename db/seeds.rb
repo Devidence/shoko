@@ -6,7 +6,8 @@ mentor = Mentor.new(
   first_name: "Mentor",
   last_name: "Smith",
   password: "password",
-  password_confirmation: "password"
+  password_confirmation: "password",
+  confirmed_at: Time.now
 )
 mentor.save!
 
