@@ -1,0 +1,7 @@
+<%= form_for(question, remote: true) do |f| %>
+    <%= f.text_field :description, placeholder: "Enter a Question", id: "new-question-description" %>
+    <%= f.text_field :answer, placeholder: "Answer to Question", id: "new-question-answer" %>
+    <%= f.hidden_field :appointment_id, value: appointment.id %>
+    <%= f.hidden_field :type, value: "question", id: "new-question-hidden-type" %>
+    <%= f.submit "Add", id: "new-question-button" %>
+<% end %>
