@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'questions/create'
-
   root to: 'home#index'
 
   get 'about' => 'home#about'
