@@ -17,3 +17,6 @@
 
 .ruby-gemset
 .ruby-version
+
+*.indd
+*.idlk
