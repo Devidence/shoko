@@ -12,5 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require Keypress
+//= require lodash
 //= require turbolinks
 //= require_tree .
