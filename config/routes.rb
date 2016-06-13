@@ -13,4 +13,6 @@ Rails.application.routes.draw do
     resources :appointments, only: [:index, :show, :new]
   end
 
+  resources :questions, only: [:create]
+
 end

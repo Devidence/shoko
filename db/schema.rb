@@ -11,10 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160406172735) do
+ActiveRecord::Schema.define(version: 20160609230711) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "appointments", force: :cascade do |t|
+    t.integer  "mentor_id"
+    t.integer  "student_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "appointments", ["mentor_id"], name: "index_appointments_on_mentor_id", using: :btree
+  add_index "appointments", ["student_id"], name: "index_appointments_on_student_id", using: :btree
 
   create_table "bookmarks", force: :cascade do |t|
     t.string   "url"
@@ -52,6 +62,16 @@ ActiveRecord::Schema.define(version: 20160406172735) do
   add_index "mentors", ["email"], name: "index_mentors_on_email", unique: true, using: :btree
   add_index "mentors", ["reset_password_token"], name: "index_mentors_on_reset_password_token", unique: true, using: :btree
 
+  create_table "questions", force: :cascade do |t|
+    t.integer  "appointment_id"
+    t.string   "description"
+    t.string   "answer"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  add_index "questions", ["appointment_id"], name: "index_questions_on_appointment_id", using: :btree
+
   create_table "skills", force: :cascade do |t|
     t.string  "name"
     t.text    "description"
@@ -88,8 +108,11 @@ ActiveRecord::Schema.define(version: 20160406172735) do
   add_index "students", ["mentor_id"], name: "index_students_on_mentor_id", using: :btree
   add_index "students", ["reset_password_token"], name: "index_students_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "appointments", "mentors"
+  add_foreign_key "appointments", "students"
   add_foreign_key "bookmarks", "mentors"
   add_foreign_key "bookmarks", "skills"
+  add_foreign_key "questions", "appointments"
   add_foreign_key "skills", "mentors"
   add_foreign_key "students", "mentors"
 end
