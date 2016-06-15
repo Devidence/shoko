@@ -7,6 +7,8 @@ class AppointmentsController < ApplicationController
 
   def show
     # will show specific appointment of a student
+    @appointment = Appointment.find(params[:id])
+    @questions = Question.where(appointment: @appointment)
   end
 
   def new

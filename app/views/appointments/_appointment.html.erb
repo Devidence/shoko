@@ -1,5 +1,5 @@
 <div>
-  <h2>Appointment <%= appointment.id %></h2>
-  <p>Mentor: <%= appointment.mentor.first_name %></p>
-  <p>Student: <%= appointment.student.first_name %></p>
+  <%= link_to student_appointment_path(params[:student_id], appointment.id) do %>
+    <div>Appointment <%= appointment.id %></div>
+  <% end %>
 </div>
