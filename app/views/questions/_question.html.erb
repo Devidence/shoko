@@ -5,5 +5,9 @@
   <div>
     Answer: <%= question.answer %>
   </div>
+  <div>
+    <%= link_to "edit", "#" %>
+    <%= link_to "delete", question_path(question.id), method: :delete, remote: true %>
+  </div>
 </div>
 <br />
