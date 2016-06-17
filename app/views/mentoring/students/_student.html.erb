@@ -1,5 +1,5 @@
 <div class="student">
-  <%= link_to(student) do %>
+  <%= link_to(mentoring_student_path(student)) do %>
     <p><%= student.first_name + ' ' + student.last_name %></p>
   <% end %>
 </div>
