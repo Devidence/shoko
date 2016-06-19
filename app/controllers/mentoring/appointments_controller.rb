@@ -1,8 +1,9 @@
-class AppointmentsController < ApplicationController
+class Mentoring::AppointmentsController < ApplicationController
 
   def index
     # will show all appointments based on a student
     @appointments = Appointment.where(student_id: params[:student_id])
+    @student = Student.find(params[:student_id])
   end
 
   def show

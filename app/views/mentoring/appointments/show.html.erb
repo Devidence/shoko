@@ -1,0 +1,7 @@
+<h1>Appointment <%= @appointment.id %></h1>
+<div>
+  <%= link_to "Back", mentoring_student_appointments_path(@appointment.student.id) %>
+</div>
+<div>
+  <%= render partial: 'mentoring/questions/question', collection: @questions %>
+</div>

@@ -1,7 +1,0 @@
-<h1>Appointment <%= @appointment.id %></h1>
-<div>
-  <%= link_to "Back", student_appointments_path(@appointment.student.id) %>
-</div>
-<div>
-  <%= render partial: 'questions/question', collection: @questions %>
-</div>
