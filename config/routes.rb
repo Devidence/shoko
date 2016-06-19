@@ -14,6 +14,7 @@ Rails.application.routes.draw do
     resources :students, only: [:index, :show] do
       resources :appointments, only: [:index, :show, :new]
     end
+    resources :appointments, only: [:index]
     resources :questions, only: [:create]
   end
 
