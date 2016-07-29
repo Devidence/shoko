@@ -17,7 +17,7 @@ class Mentoring::AppointmentsController < ApplicationController
   
   def create
     @student = Student.find(params[:student_id])
-    @appointment = Appointment.new
+    @appointment = Appointment.new(appointment_params)
     @appointment.student = @student
     @appointment.mentor = current_mentor
     
@@ -38,5 +38,11 @@ class Mentoring::AppointmentsController < ApplicationController
     @appointment.conclude
     
     redirect_to mentoring_students_path
+  end
+  
+  private
+  
+  def appointment_params
+    params.require(:appointment).permit(:category)
   end
 end

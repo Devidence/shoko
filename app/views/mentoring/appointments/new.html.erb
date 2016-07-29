@@ -3,4 +3,15 @@
   Student: <%= @student.name %>
 </div>
 
+<%= form_for [:mentoring, @student, @appointment] do |f| %>
+  <%= f.radio_button :category, 1, checked: true %>
+  <%= label :category, 'Scheduled' %>
+  <%= f.radio_button :category, 2 %>
+  <%= label :category, 'Make Up' %>
+  <%= f.radio_button :category, 3 %>
+  <%= label :category, 'Impromptu' %>
+  
+  <%= f.submit "Start" %>
+<% end %>
+
 <div><%= link_to "Start", mentoring_student_appointments_path(@student, @appointment), method: :post %></div>
