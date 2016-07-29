@@ -1,0 +1,6 @@
+<h1> <%= @skill.name %> </h1>
+<% @skill.bookmarks.each do |bookmark| %>
+  <ul>
+    <li> <%= bookmark.url %> </li>
+  </ul>
+<% end %>
