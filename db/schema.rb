@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160609230711) do
+ActiveRecord::Schema.define(version: 20160729143921) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,8 +19,9 @@ ActiveRecord::Schema.define(version: 20160609230711) do
   create_table "appointments", force: :cascade do |t|
     t.integer  "mentor_id"
     t.integer  "student_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.datetime "finished_at"
   end
 
   add_index "appointments", ["mentor_id"], name: "index_appointments_on_mentor_id", using: :btree
@@ -68,9 +69,11 @@ ActiveRecord::Schema.define(version: 20160609230711) do
     t.string   "answer"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
+    t.integer  "student_id"
   end
 
   add_index "questions", ["appointment_id"], name: "index_questions_on_appointment_id", using: :btree
+  add_index "questions", ["student_id"], name: "index_questions_on_student_id", using: :btree
 
   create_table "skills", force: :cascade do |t|
     t.string  "name"
@@ -113,6 +116,7 @@ ActiveRecord::Schema.define(version: 20160609230711) do
   add_foreign_key "bookmarks", "mentors"
   add_foreign_key "bookmarks", "skills"
   add_foreign_key "questions", "appointments"
+  add_foreign_key "questions", "students"
   add_foreign_key "skills", "mentors"
   add_foreign_key "students", "mentors"
 end

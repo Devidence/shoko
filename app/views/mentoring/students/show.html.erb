@@ -1,4 +1,8 @@
-<h1>student show page</h1>
+<h1>Student:  <%= @student.first_name %></h1>
+
 <div>
-  <%= link_to "Appointments", mentoring_student_appointments_path(@student) %>
+  <%= link_to 'New Appointment', new_mentoring_student_appointment_path(@student) %>
+</div>
+<div>
+  <%= render partial: 'mentoring/appointments/appointment', collection: @appointments %>
 </div>

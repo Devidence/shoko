@@ -1,0 +1,18 @@
+<h1>Record</h1>
+<h2>Student: <%= @student.name %></h2>
+
+<p>
+  Start Time: <%= @appointment.created_at.to_time.strftime("%H:%M %P") %>
+</p>
+
+<div>
+  <%= render partial: 'mentoring/questions/form', locals: { appointment: @appointment, question: Question.new, student: @student}, as: :question %>
+</div>
+
+<div class="questions">
+  <%= render partial: 'mentoring/questions/question', collection: @questions %>
+</div>
+
+<div>
+  <%= link_to "Finish", mentoring_student_appointment_conclude_path(@student, @appointment), method: :post %>
+</div>

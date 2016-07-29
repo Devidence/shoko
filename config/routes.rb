@@ -12,10 +12,13 @@ Rails.application.routes.draw do
 
   namespace :mentoring do
     resources :students, only: [:index, :show] do
-      resources :appointments, only: [:index, :show, :new]
+      resources :appointments, only: [:show, :new, :create] do
+        get :record
+        post :conclude
+      end
     end
     resources :appointments, only: [:index]
-    resources :questions, only: [:create]
+    resources :questions, only: [:create, :destroy]
   end
 
 

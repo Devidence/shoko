@@ -7,6 +7,7 @@ class Mentor < ActiveRecord::Base
   has_many :skills
   has_many :students
   has_many :bookmarks
+  has_many :appointments
 
   before_create :set_mentor_role
 

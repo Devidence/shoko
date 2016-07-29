@@ -10,6 +10,15 @@ class Mentoring::QuestionsController < ApplicationController
     end
   end
 
+  def destroy
+    @question = Question.find(params[:id])
+    @question.destroy
+
+    respond_to do |format|
+      format.js
+    end
+  end
+
   private
 
   def question_params

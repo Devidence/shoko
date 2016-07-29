@@ -6,7 +6,10 @@
     <div class="nav-general-links">
       <%= link_to "Skills", skills_path %>
       <%= link_to "Bookmarks", bookmarks_path %>
-      <%= link_to "Students", mentoring_students_path %>
+      <% if current_mentor %>
+        <%= link_to "Students", mentoring_students_path %>
+        <%= link_to "Appointments", mentoring_appointments_path %>
+      <% end %>
     </div>
 
     <div class="nav-session-links">

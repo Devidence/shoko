@@ -1,7 +1,16 @@
-<%= form_for(question, url: mentoring_questions_path, remote: true) do |f| %>
+<h2>Add Questions</h2>
+
+<%= form_for [:mentoring, question], remote: true do |f| %>
+  <div class="">
     <%= f.text_field :description, placeholder: "Enter a Question", id: "new-question-description" %>
-    <%= f.text_field :answer, placeholder: "Answer to Question", id: "new-question-answer" %>
-    <%= f.hidden_field :appointment_id, value: appointment.id %>
-    <%= f.hidden_field :type, value: "question", id: "new-question-hidden-type" %>
+  </div>
+  <div class="">
+    <%= f.text_area :answer, placeholder: "Answer to Question", id: "new-question-answer" %>
+  </div>
+  <%= f.hidden_field :appointment_id, value: appointment.id %>
+  <%= f.hidden_field :student_id, value: student.id %>
+  <%= f.hidden_field :type, value: "question", id: "new-question-hidden-type" %>
+  <div class="">
     <%= f.submit "Add", id: "new-question-button" %>
+  </div>
 <% end %>

@@ -1,7 +1,13 @@
-<h1>Appointment <%= @appointment.id %></h1>
-<div>
-  <%= link_to "Back", mentoring_student_appointments_path(@appointment.student.id) %>
-</div>
-<div>
+<h1>Appointment: <%= @appointment.student.name %></h1>
+<h4>On: <%= @appointment.created_at.strftime('%m/%d/%Y') %></h4>
+
+<p>
+  Started At: <%= @appointment.created_at.to_time.strftime("%H:%M %P") %>
+</p>
+<p>
+  Concluded At: <%= @appointment.finished_at.to_time.strftime("%H:%M %P") if @appointment.finished_at%>
+</p>
+
+<div class="questions">
   <%= render partial: 'mentoring/questions/question', collection: @questions %>
 </div>

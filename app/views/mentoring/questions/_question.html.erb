@@ -5,5 +5,9 @@
   <div>
     Answer: <%= question.answer %>
   </div>
+  <div>
+    <%= link_to "edit", "#" %>
+    <%= link_to "delete", [:mentoring, question], method: :delete, remote: true %>
+  </div>
 </div>
 <br />

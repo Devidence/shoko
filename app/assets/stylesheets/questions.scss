@@ -3,8 +3,13 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-#new-question-description,
-#new-question-answer,
-#new-question-button {
-  display: none;
+// #new-question-description,
+// #new-question-answer,
+// #new-question-button {
+//   display: none;
+// }
+
+
+#new-question-description, #new-question-answer{
+  width: 400px;
 }
