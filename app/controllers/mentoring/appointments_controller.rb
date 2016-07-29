@@ -1,6 +1,6 @@
 class Mentoring::AppointmentsController < ApplicationController
   def index
-    @appointments = current_mentor.appointments
+    @appointments = current_mentor.appointments.includes(:student).order("students.first_name")
   end
 
   def show
