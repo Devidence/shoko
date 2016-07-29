@@ -1,4 +1,4 @@
-<%= form_for(question, remote: true) do |f| %>
+<%= form_for(question, url: mentoring_questions_path, remote: true) do |f| %>
     <%= f.text_field :description, placeholder: "Enter a Question", id: "new-question-description" %>
     <%= f.text_field :answer, placeholder: "Answer to Question", id: "new-question-answer" %>
     <%= f.hidden_field :appointment_id, value: appointment.id %>

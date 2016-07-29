@@ -9,10 +9,14 @@ Rails.application.routes.draw do
 
   resources :skills
   resources :bookmarks
-  resources :students, only: [:index, :show] do
-    resources :appointments, only: [:index, :show, :new]
+
+  namespace :mentoring do
+    resources :students, only: [:index, :show] do
+      resources :appointments, only: [:index, :show, :new]
+    end
+    resources :appointments, only: [:index]
+    resources :questions, only: [:create]
   end
 
-  resources :questions, only: [:create]
 
 end
